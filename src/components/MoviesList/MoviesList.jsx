@@ -6,9 +6,7 @@ import {
   MovieImage,
   MovieTitle,
 } from './MoviesList.styled';
-
-import mainplaceholder from 'services/mainplaceholder.png';
-
+import mainplaceholder from 'Services/mainplaceholder.png';
 export const MoviesList = ({ films }) => {
   const location = useLocation();
 

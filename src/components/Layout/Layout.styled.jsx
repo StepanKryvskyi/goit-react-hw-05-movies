@@ -22,7 +22,7 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 20px;
 
   &.active {
-    color: orangered;
+    color: #0c38e8;
     font-weight: bold;
   }
 `;

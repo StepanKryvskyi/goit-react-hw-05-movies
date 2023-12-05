@@ -1,12 +1,8 @@
-import { getTrendingMovies } from '../../services/api';
+import { getTrendingMovies } from 'Services/api';
 import { useEffect, useState } from 'react';
 import { MoviesList } from '../../components/MoviesList/MoviesList';
 
-import {
-  TrendingTitle,
-  ErrorMessage,
-  LoadingMessage,
-} from './HomePage.styled.js';
+import { TrendingTitle, ErrorMessage, LoadingMessage } from './HomePage.styled';
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);

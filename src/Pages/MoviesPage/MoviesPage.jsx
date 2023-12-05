@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { searchMovies } from 'services/api';
+import { searchMovies } from 'Services/api';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { Loader } from 'components/Loader/Loader';
-import { Searchbar } from 'components/Searchbar/SearchBar';
+import { Searchbar } from 'components/Searchbar/Searchbar';
 import { StyleErrorMsg, StyledNotFound } from './MoviesPage.styled';
 
 export default function MoviesPage() {
@@ -28,8 +28,6 @@ export default function MoviesPage() {
         } else {
           setError(null);
         }
-
-        // Оновлення параметрів URL після пошуку
       } catch (error) {
         setError(error);
       } finally {

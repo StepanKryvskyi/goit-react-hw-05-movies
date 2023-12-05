@@ -2,13 +2,16 @@ import styled, { keyframes } from 'styled-components';
 
 const changeColor = keyframes`
   0% {
-    color: red;
+    color: #696ac2;
   }
   50% {
-    color: blue;
+    color: #2b2d8c;
+  }
+  75%{
+    color: #393a91;
   }
   100% {
-    color: green;
+    color: #0c38e8;
   }
 `;
 

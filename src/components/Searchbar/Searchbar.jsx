@@ -9,7 +9,7 @@ export const Searchbar = ({ onSubmit }) => {
           query: '',
         }}
         onSubmit={(values, actions) => {
-          onSubmit(values.query); 
+          onSubmit(values.query);
 
           actions.resetForm();
         }}

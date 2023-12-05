@@ -1,10 +1,8 @@
-import { getActorsMovies } from 'services/api';
+import { getActorsMovies } from 'Services/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-import placeholder from 'services/placeholder.png';
-
-import { ErrorMessage, LoadingMessage } from 'pages/Homepage/HomePage.styled';
+import placeholder from 'Services/placeholder.png';
+import { ErrorMessage, LoadingMessage } from 'Pages/HomePage/HomePage.styled';
 import {
   CastList,
   CastItem,

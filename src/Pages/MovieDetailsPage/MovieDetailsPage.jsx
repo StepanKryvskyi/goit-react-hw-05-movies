@@ -1,7 +1,7 @@
 import { Outlet, useParams, useLocation } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
-import { getDetailsMovies } from 'services/api';
-
+import { getDetailsMovies } from '../../Services/api';
+import mainplaceholder from 'Services/mainplaceholder.png';
 import { TiArrowBack } from 'react-icons/ti';
 
 import {
@@ -13,15 +13,13 @@ import {
   AddList,
   StyledNavLink,
   StyledBackLink,
-} from './MovieDetailsPage.styled.js';
+} from './MovieDetailsPage.styled';
 
-import { ErrorMessage, LoadingMessage } from '../Homepage/HomePage.styled';
-import mainplaceholder from 'services/mainplaceholder.png';
+import { ErrorMessage, LoadingMessage } from '../HomePage/HomePage.styled';
 
 export default function MovieDetailsPage() {
   const location = useLocation();
   const backLinkRef = useRef(location);
-  // console.log(location);
 
   const params = useParams();
 
@@ -44,7 +42,6 @@ export default function MovieDetailsPage() {
     getDetails();
   }, [params.movieId]);
 
-  // Визначення getUserScore всередині області відображення компонентів
   const getUserScore =
     movie && movie.vote_average ? Math.round(movie.vote_average * 10) : 0;
 
@@ -78,14 +75,9 @@ export default function MovieDetailsPage() {
             <h2>Overview</h2>
             <Overview>{movie.overview}</Overview>
             <h2>Genres</h2>
-            {movie.genres.map(
-              (
-                { name },
-                index //перебираємо масив мар жанрів, витягуємо назву жанрів та індекс поточного елемента
-              ) => (
-                <span key={index}>{name} </span> //відмальовуємо унікальний ключ "індекс" і рендерим нейм жанру
-              )
-            )}
+            {movie.genres.map(({ name }, index) => (
+              <span key={index}>{name} </span>
+            ))}
           </MovieInfo>
         </DetailsContainer>
       )}

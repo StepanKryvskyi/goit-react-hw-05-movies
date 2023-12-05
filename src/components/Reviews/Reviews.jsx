@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getReviewsMovies } from 'services/api';
+import { getReviewsMovies } from 'Services/api';
 
-import { ErrorMessage, LoadingMessage } from 'pages/Homepage/HomePage.styled';
+import { ErrorMessage, LoadingMessage } from 'Pages/HomePage/HomePage.styled';
 import {
   StyledAuthor,
   ReviewList,
@@ -22,11 +22,7 @@ export default function Reviews() {
       try {
         setIsLoading(true);
         const fetchedReviews = await getReviewsMovies(params.movieId);
-
-        // console.log(fetchedReviews);
-
         setReviews(fetchedReviews.results);
-        // console.log(fetchedReviews.reviews);
       } catch (error) {
         setError(error);
       } finally {
